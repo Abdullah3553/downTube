@@ -23,7 +23,7 @@ def downloadPlaylist(playListURL, startingVid):
 	print("The playlist has been downloaded !!")
     return 0 
 #URL = sys.argv[1] # first argument after the script name >> uncomment this to use terminal arguments
-#startingFrom = sys.argv[2] # the second argument after the script name >> uncomment this to use terminal arguments
+#startingFrom = int(sys.argv[2]) # the second argument after the script name >> uncomment this to use terminal arguments
 URL = input("Enter the URL of the playlist >_ ")
 startingFrom = int(input("Enter the starting video number ( writre 1 for the first video in the playlist)"))
 #print(f"URL is {URL}") # testing.. 
