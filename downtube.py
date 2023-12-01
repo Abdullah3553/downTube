@@ -62,24 +62,34 @@ def main():
             else:
                 playlistStartAt = int(playlistStartAt)
             downloadPlaylist(playlsitUrl, playlistStartAt)
-
         elif inputOption == 3:
             # Download a single video
             vidUrl = input("Enter the Video URL >_ ")
             downloadSingleVideo(vidUrl)
         elif inputOption == 4:
             # Download a sequance of videos
-            continue
+            print("Enter the all links you want to download and when you are done write done. ")
+            links = []
+            tmpLink = ''
+            while True:
+                tmpLink = input(">_ ")
+                if tmpLink.lower() == "done":
+                    break
+                links.append(tmpLink)
+            for url in links:
+                downloadSingleVideo(url)
+            
         elif inputOption == 5:
             # Download a single song 
             continue
         elif inputOption == 2:
             # Download a sequance of songs
             continue
-
-
         # elif inputOption == 2:
         #     # Option describtion 
+        print("Done\nWhat's next ?")
+        for i in range(0, len(options)): 
+         print(options[i])
     print("Cya :d")
     return 0
 
