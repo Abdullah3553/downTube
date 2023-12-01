@@ -1,0 +1,10 @@
+
+# *---|---------------|-------------|----------------------------------------------
+# |   -input code-    -number-      -meaning-          
+# |   a               1             Adjsut the settings                            
+# |   b               2             Download a playlist               
+# |   c               3             Download a single video      
+# |   d               4             Download a sequance of videos  
+# |   e               5             Download a single song       
+# |   f               6             Download a sequance of songs 
+# *---|---------------|-------------|----------------------------------------------         

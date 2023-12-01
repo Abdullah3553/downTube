@@ -20,12 +20,50 @@ def downloadPlaylist(playListURL, startingVid):
             print(f"FAIL  >>>  {playList.videos[i].title }\nRetrying...(Press Ctrl + C to stop the script)")
             continue
         i = i+1
-	print("The playlist has been downloaded !!")
+    print("The playlist has been downloaded !!")
     return 0 
-#URL = sys.argv[1] # first argument after the script name >> uncomment this to use terminal arguments
-#startingFrom = int(sys.argv[2]) # the second argument after the script name >> uncomment this to use terminal arguments
-URL = input("Enter the URL of the playlist >_ ")
-startingFrom = int(input("Enter the starting video number ( writre 1 for the first video in the playlist)"))
-#print(f"URL is {URL}") # testing.. 
-#print(f"starting from is {startingFrom}") # testing..
-downloadPlaylist(URL, startingFrom)
+
+def main():
+    options = [
+         "A)Adjsut the settings", "B)Download a playlist",
+         "C)Download a single video", "D)Download a sequance of videos",
+         "E)Download a single song", "F)Download a sequance of songs",
+    ]
+    print('----| Welcome |----')
+    print('What Do You Want To Do ? (Enter the letter)')
+    for i in range(0, len(options)): 
+         print(options[i])
+
+    while True :
+        character = input(print('>_'))
+        inputOption = (ord(character[0].upper()) - ord('A')) + 1 # this should give us the number of the selected option
+        if inputOption < 1 or inputOption > 26: # that means no letter was entered so break the loop
+            break
+        if inputOption == 1:
+            # Adjsut the settings
+            continue
+        elif inputOption == 2:
+            # Download a playlist 
+            playlsitUrl = input("Enter the URL of the Playlist. >_ ")
+            playlistStartAt = int(input("Enter the starting video number ( writre 1 to start from the first video in the playlist) >_ "))
+            downloadPlaylist(playlsitUrl, playlistStartAt)
+
+        elif inputOption == 3:
+            # Download a single video
+            continue
+        elif inputOption == 4:
+            # Download a sequance of videos
+            continue
+        elif inputOption == 5:
+            # Download a single song 
+            continue
+        elif inputOption == 2:
+            # Download a sequance of songs
+            continue
+
+
+        # elif inputOption == 2:
+        #     # Option describtion 
+
+if __name__ == "__main__":
+         main()
