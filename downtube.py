@@ -1,7 +1,7 @@
 
 # this is a really ^simple^ program to download a palylist from a youtube ... 
 
-import sys
+# import sys # this is for future uses @TODO Implement system paramaters 
 from pytube import Playlist, YouTube
 
 def downloadPlaylist(playListURL, startingVid):
