@@ -65,7 +65,7 @@ def main():
 
         elif inputOption == 3:
             # Download a single video
-            vidUrl = input("Enter the Video URL >_")
+            vidUrl = input("Enter the Video URL >_ ")
             downloadSingleVideo(vidUrl)
         elif inputOption == 4:
             # Download a sequance of videos
