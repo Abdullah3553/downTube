@@ -35,7 +35,7 @@ def main():
          print(options[i])
 
     while True :
-        character = input(print('>_'))
+        character = input(">_ ")
         inputOption = (ord(character[0].upper()) - ord('A')) + 1 # this should give us the number of the selected option
         if inputOption < 1 or inputOption > 26: # that means no letter was entered so break the loop
             break
@@ -45,7 +45,11 @@ def main():
         elif inputOption == 2:
             # Download a playlist 
             playlsitUrl = input("Enter the URL of the Playlist. >_ ")
-            playlistStartAt = int(input("Enter the starting video number ( writre 1 to start from the first video in the playlist) >_ "))
+            playlistStartAt = input("Enter the starting video number ( writre 1 to start from the first video in the playlist) >_ ")
+            if not playlistStartAt.isdecimal:
+                playlistStartAt = 1
+            else:
+                playlistStartAt = int(playlistStartAt)
             downloadPlaylist(playlsitUrl, playlistStartAt)
 
         elif inputOption == 3:
