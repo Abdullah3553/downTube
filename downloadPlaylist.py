@@ -68,6 +68,8 @@ def main():
 
         # elif inputOption == 2:
         #     # Option describtion 
+    print("Cya :d")
+    return 0
 
 if __name__ == "__main__":
          main()
