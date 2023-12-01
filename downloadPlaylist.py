@@ -2,7 +2,7 @@
 # this is a really ^simple^ program to download a palylist from a youtube ... 
 
 import sys
-from pytube import Playlist
+from pytube import Playlist, YouTube
 
 def downloadPlaylist(playListURL, startingVid):
     # playListURL is the url for the playlist you want to download
@@ -23,11 +23,22 @@ def downloadPlaylist(playListURL, startingVid):
     print("The playlist has been downloaded !!")
     return 0 
 
+def downloadSingleVideo(url):
+    video = YouTube(url)
+    try:
+            print(f"downloading >> {video.title} ")
+            video.streams.get_highest_resolution().download()
+            print(f"{video.title} >> Downloaded. ")
+    except:
+        print(f"FAIL  >>>  {video.title }")
+        return 0
+
 def main():
     options = [
          "A)Adjsut the settings", "B)Download a playlist",
          "C)Download a single video", "D)Download a sequance of videos",
          "E)Download a single song", "F)Download a sequance of songs",
+         "0)Exit"
     ]
     print('----| Welcome |----')
     print('What Do You Want To Do ? (Enter the letter)')
@@ -54,7 +65,8 @@ def main():
 
         elif inputOption == 3:
             # Download a single video
-            continue
+            vidUrl = input("Enter the Video URL >_")
+            downloadSingleVideo(vidUrl)
         elif inputOption == 4:
             # Download a sequance of videos
             continue
